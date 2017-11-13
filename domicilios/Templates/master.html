@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Página principal{% endblock %}</title>
+ {% load static %}
+  <link href="{% static "css/bootstrap.min1.css" %}" rel="stylesheet" type="text/css">
+  <link href="{% static "css/bootstrap-tweaks.css" %}" rel="stylesheet" type="text/css">
+  <script src="{% static "js/jquery.min.js" %}" ></script>
+  <script src="{% static "js/bootstrap.min1.js" %}" ></script>
+  <style>
+
+  form{ width:150px; margin:0 auto;}
+  form p, form input[type = "submit"]{text-align:center; font-size:20px;}
+
+  th{text-align: center;}
+  td{text-align: center;}
+
+  input[type = "radio"]{ display:none;/*position: absolute;top: -1000em;*/;ali}
+  label{ color:grey;}
+
+  .clasificacion{
+      direction: rtl;
+      unicode-bidi: bidi-override;
+  }
+
+  label:hover,
+  label:hover ~ label{color:orange;}
+  input[type = "radio"]:checked ~ label{color:orange;}
+
+  </style>
+</head>
+<body>
+  <div id=header>
+  {% block header %}
+  <div class="navbar navbar-static-top navbar-inverse" role="navigation" aria-label="navbar">
+    <div class="container">
+      <span><a class="navbar-brand" rel="nofollow" href="">Te lo traigo</a></span>
+    </div>
+  </div>
+  {% endblock %}
+</div>
+    <div class="container">
+        <!-- bloque de contenido para el contenido de la página-->
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

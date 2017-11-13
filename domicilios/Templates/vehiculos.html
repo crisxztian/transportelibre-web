@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block title %}
+Listado de Domiciliarios
+{% endblock %}
+{% block content %}
+    {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+<div class="row" style="margin-top:70px">
+<div class="panel panel-default">
+        <div class="panel-body">
+          <h2>Vehiculos registrados de: {{domi.nombres}} {{domi.apellidos}}</h2>
+          <table class="table">
+            <tr class="info">
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Placa</th>
+              </tr>
+          {% for veh in domi.vehiculos %}
+            <tr>
+              <td>{{veh.id}}</td>
+              <td>{{veh.tipo}}</td>
+              <td>{{veh.placa}}</td>
+          {% endfor %}
+          </table>
+        </div>
+    </div>
+{% endblock %}
